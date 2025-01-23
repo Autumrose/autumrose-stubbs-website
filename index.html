@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Autumrose Stubbs Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/94bbcc62ca.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="name">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-x" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="intro-sentence">
+                    <p> Software Developer | Web Developer </p>
+                    <h1>Welcome to my website my name is <span>Autum.</span></h1>
+                </div>
+            </div>
+        </div>
+        <!-------------------------- About Section ---------------------------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/background.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I have professional experience in quality assurance, IT, and customer service, combined with a background in computer science. 
+                            My skills include programming, database management with MySQL and PostgreSQL, and both frontend and backend development. 
+                            I enjoy improving workflows, organizing knowledge, and collaborating with others to solve problems.
+                            <br><br>In my free time, I enjoy reading and spending time with my two dogs. 
+                            I’m excited to grow in technical roles and contribute to impactful projects.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('lang')">Programming Languages</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="lang">
+                            <ul>
+                                <li><span>Java</span> Eclipse | IntelliJ | NetBeans</li>
+                                <li><span>Python</span> PyCharm</li>
+                                <li><span>C</span> Visual Studio Code</li>
+                                <li><span>C#</span> Visual Studio</li>
+                                <li><span>C++</span> Visual Studio Code</li>
+                                <li><span>SQL</span> MySQL Workbench | pgAdmin</li>
+                                <li><span>JavaScript</span> Visual Studio Code</li>
+                                <li><span>HTML</span> Visual Studio Code</li>
+                                <li><span>CSS</span> Visual Studio Code</li>
+
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Subject Matter Expert and Trainer</span><br>Sutter Health<br>Oct 2021 - Current</li>
+                                <li><span>Quality Assurance Intern</span><br>University Faculty Information & Support<br>Jan 2019 - April 2021</li>
+                                <li><span>Help Desk Agent</span><br>University of Utah Eccles IT<br>Jan 2018 - Jan 2019</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Western Governors University</span><br>Bachelor of Science in Computer Science 2024</li>
+                                <li><span>Salt Lake Community College</span><br>Associate of Science in General Education 2017</li>
+                                <li><span>Certifications</span><br>CompTIA Project+ 2024 <br>PeopleCert ITIL 4 Foundation IT Service Management 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------- Portfolio ---------------------------------->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">Portfolio</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/bookrec.jpg">
+                        <div class="layer">
+                            <h3>Book Recommender</h3><br>
+                            <p>Book recommending system that utilizes machine learning to take user preferences and generate a tailored list of recommendations.
+                                Access the code from the Github. </p>
+                            <a href="https://github.com/Autumrose/book-recommender" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/scheduling.jpg">
+                        <div class="layer">
+                            <h3>Scheduling Desktop App</h3><br>
+                            <p>Scheduling appointment system.
+                                Access the code from the Github. </p>
+                            <a href="https://github.com/Autumrose/scheduling-desktop-app" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/asteroids.jpg">
+                        <div class="layer">
+                            <h3>Asteroid Game</h3><br>
+                            <p>Asteroids! Alien Spaceships! Bullets! A game where you control your spaceship and have a mission to complete. 
+                                Access the code from the Github.</p>
+                            <a href="https://github.com/Autumrose/asteroids-game" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/Autumrose" target="_blank" class ="btn">See more on Github</a>
+            </div>
+        </div>
+        <!-------------------------- Contact ---------------------------------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class = "sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-envelope"></i>stubbsautumrose@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>801-529-8094</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/autumrose-s-295323bb/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Autumrose" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <a href="images/Autumrose Stubbs Resume.pdf" target="_blank" class="btn btn2"> Resume</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------- JavaScript ------------------>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            
+            /*
+            Function to switch the tab in the About Me section when it's clicked on 
+            */
+            function opentab(tabName){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabName).classList.add("active-tab");
+            }
+
+            scr
+        </script>
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right="-150px";
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw8SpvUsh6Bnkepfc1sI5oSoUnCsOn62SQZ1qbtcHbL9RARbkq4xlWCpOflO2KVfas7/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById('msg');
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully."
+                    setTimeout(function(){
+                        msg.innerHTML = "";
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => {
+                    msg.innerHTML = "We're sorry the message was not able to be sent. Please try again at another time."
+                    setTimeout(function(){
+                        msg.innerHTML = "";
+                    }, 10000)
+                    form.reset()
+                })
+            })
+          </script>
+    </body>
+</html>

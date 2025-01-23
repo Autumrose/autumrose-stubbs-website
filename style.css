@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #FFFFFF;
+    color: #FFFFFF;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    
+    background-image: linear-gradient(50deg,#EDB5BF 0%,#86B3D1 20%,  #4D6D9A 30%, #86B3D1 70%, #EDB5BF 90%);
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+/* Setting the top left name image size  */
+.name{
+    width: 100px;
+    padding-left: 10px;
+}
+/* *************************************************NAVIGATION BAR************************************************* */
+/* Hide the menu options when not in mobile mode*/
+nav .fa-solid{
+    display: none;
+}
+
+/* Setting the navigation bar and name header section formatting) */
+nav{
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: #4D6D9A;
+    height: 10%;
+    width: 100%;
+    padding: 0; /* No padding */
+    margin: 0; /* Remove any margin if necessary */
+}
+nav ul{
+    right: 0;
+}
+
+/* Setting the navigation bar button formatting (margin/spacing) */
+nav ul li{
+    display:inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+}
+
+/* Setting the navigation bar link formatting (color, no underline, etc) */ 
+nav ul li a{
+    color: #4D6D9A; 
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+    display: inline-flex; /* Ensures proper alignment */
+    justify-content: center;
+    align-items: center;
+    width: 100px; /* Set equal width and height for the circle */
+    height: 40px; /* Matches width for a perfect circle */
+    background-color: #EDB5BF; /* Circle background color */
+    border-radius: 10px; /* Creates the circular shape */
+    transition: transform 0.3s, background-color 0.3s; /* For hover effects */
+} 
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #EDB5BF;
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* *************************************************HOME PAGE************************************************* */
+
+/* Format the main page introduction sentence */
+.intro-sentence{
+    margin-top: 20%;
+    margin-right: 20%;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24em;
+}
+
+/* Intro sentence on the home page */
+.intro-sentence h1{
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+/* The span highlights my name */
+.intro-sentence h1 span{
+    color: #EDB5BF;
+}
+
+
+/* *************************************************ABOUT************************************************* */
+/* About section */
+#about{
+    padding: 80px 0;
+    color: #4D6D9A;
+    background-color: #FFFFFF;
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Left hand image */
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Right hand column with the text */
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+/* About me title section */
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #EDB5BF;
+
+}
+
+/* The tab titles, links, and actions after selecting */
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0; 
+    height: 3px;
+    background: #EDB5BF;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 100%;
+}
+
+/* All content in the about me tab section */
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* The pink labels in the content in the 3 tabs in the about me section */
+.tab-contents ul li span{
+    color: #EDB5BF;
+    font-size: 17px;
+    font-style: normal;
+}
+
+/* Hiding the content when the tab isn't selected */
+.tab-contents{
+    display: none;
+
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* ************************************************* PORTFOLIO ************************************************* */
+
+/* Set the portfolio id padding so there's space above and below */
+#portfolio{
+    color: #FFFFFF;
+    background-color: #4D6D9A;
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+}
+
+/* Set formatting for the section of 3 work examples */
+.work-list{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-gap: 40px;
+   margin-top: 50px; 
+}
+
+/* Set the formatting for each work example separately */
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: none;
+}
+
+/* set the image formatting */
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: tranform 0.5s;
+}
+
+/* Each work example has a layer with the gradient gackground and the text on top of the image*/ 
+.layer{
+    width: 100%;
+    height: 0%; 
+    background: linear-gradient(rgba(77,109,154,.85), #EDB5BF);
+    border-radius: 10px; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 15px;
+    transition: height 0.5s;
+}
+
+/* Header in the layer */
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 30p;
+}
+
+/* links in the layer */
+.layer a{
+    margin-top: 20px;
+    color: #EDB5BF;
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 60px;
+    background: #4D6D9A;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* When you hover over any of the work examples */
+.work:hover img {
+    transform: scale(1.1);
+}
+.work:hover .layer {
+    height: 100%;
+}
+
+/* See more button  */
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #EDB5BF;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #FFF;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #EDB5BF;
+}
+
+/* ************************************************* CONTACT ************************************************* */
+#contact{
+    color: #4D6D9A;
+    background-color: #FFFFFF;
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+/* paragraph/text in the left column*/
+.contact-left p{
+    margin-top: 30px;
+}
+/* Design the icons (phone and email)*/
+.contact-left p i{
+    color: #EDB5BF;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #4D6D9A;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: #EDB5BF;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #4D6D9A;
+    border: 1px solid #4D6D9A;
+}
+
+.btn.btn2:hover{
+    color: #EDB5BF;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #4D6D9A;
+    padding: 15px;
+    margin: 15px 0;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 6px;
+}
+::placeholder{
+    color:#FFF;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#msg{
+    color: #EDB5BF;
+    margin-top: -10px;
+    display: block;
+    font-size: 20px;
+}
+
+
+/* ************************************************* CSS For Small Screens ************************************************* */
+@media only screen and (max-width: 600px){
+    #header{
+        background-color: #4D6D9A;
+    }
+    /* Resize intro sentence */
+    .intro-sentence{
+        margin-top: 50%;
+        font-size: 16px;
+        width: 100%;
+    }
+    .intro-sentence h1{
+        font-size: 30px;
+    }
+
+    /* Hide the menu options when not in mobile mode*/
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+        padding-right: 15px;
+    }
+    /* Creating side navigation bar */
+    nav ul{
+        background: #EDB5BF;
+        position: fixed;
+        top: 0;
+        right: -150px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .intro-sentence h1 {
+        font-size: 30px;
+    }
+    #about, #portfolio, #contact{
+        height: 100%;
+    }
+
+    /* Adjust .row and columns for smaller screens */
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sub-title{
+        font-size: 30px;
+    }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+    .about-col-1{
+       margin-bottom: 10px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+     /* Reduce padding for tab-links and adjust font size */
+     .tab-links {
+        margin-right: 20px;
+        font-size: 16px;
+    }
+
+    /* Adjust portfolio grid */
+    .work-list {
+        grid-template-columns: 1fr; /* Make all items stack */
+    }
+
+    /* Contact form width adjustments */
+    .contact-right form, .contact-right {
+        flex-basis: 100%;
+    }
+    
+}
