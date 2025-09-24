@@ -5,28 +5,27 @@
     box-sizing: border-box;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 body{
-    background: #FFFFFF;
-    color: #FFFFFF;
+    background: #ebe8e4;
+    color: #1d4355;
+    overflow: hidden; /* This prevents all scrolling */
 }
 #header{
     width: 100%;
     height: 100vh;
     
-    background-image: linear-gradient(50deg,#EDB5BF 0%,#86B3D1 20%,  #4D6D9A 30%, #86B3D1 70%, #EDB5BF 90%);
+   background-image: url("images/cover_photo.png");
+   background-size: cover;    /* scales to cover entire page */
+   background-position: center; /* centers the image */
+   background-repeat: no-repeat;
 }
 
 .container{
     padding: 10px 10%;
 }
 
-/* Setting the top left name image size  */
-.name{
-    width: 100px;
-    padding-left: 10px;
-}
 /* *************************************************NAVIGATION BAR************************************************* */
 /* Hide the menu options when not in mobile mode*/
 nav .fa-solid{
@@ -41,7 +40,6 @@ nav{
     justify-content: space-between;
     position: fixed;
     top: 0;
-    background-color: #4D6D9A;
     height: 10%;
     width: 100%;
     padding: 0; /* No padding */
@@ -62,7 +60,7 @@ nav ul li{
 
 /* Setting the navigation bar link formatting (color, no underline, etc) */ 
 nav ul li a{
-    color: #4D6D9A; 
+    color: #ebe8e4; 
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -72,7 +70,7 @@ nav ul li a{
     align-items: center;
     width: 100px; /* Set equal width and height for the circle */
     height: 40px; /* Matches width for a perfect circle */
-    background-color: #EDB5BF; /* Circle background color */
+    background-color: #1d4355; /* Circle background color */
     border-radius: 10px; /* Creates the circular shape */
     transition: transform 0.3s, background-color 0.3s; /* For hover effects */
 } 
@@ -81,7 +79,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #EDB5BF;
+    background: #1d4355;
     position: absolute;
     left:0;
     bottom: -6px;
@@ -96,50 +94,54 @@ nav ul li a:hover::after{
 
 /* Format the main page introduction sentence */
 .intro-sentence{
-    margin-top: 20%;
+    margin-top: 25%;
     margin-right: 20%;
     font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 28em;
+
+    display: inline-block;      /* shrink-wrap to content */
+    padding: 20px 40px;         /* spacing inside the shape */
+    background-color: rgba(29, 67, 85); /* semi-transparent white */
+    text-align: center;
 }
 
 /* Intro sentence on the home page */
 .intro-sentence h1{
     margin-top: 20px;
     font-size: 60px;
+    color: #ebe8e4;
 }
-
-/* The span highlights my name */
-.intro-sentence h1 span{
-    color: #EDB5BF;
-}
-
 
 /* *************************************************ABOUT************************************************* */
 /* About section */
 #about{
-    padding: 80px 0;
-    color: #4D6D9A;
-    background-color: #FFFFFF;
-    height: 100vh;
+    padding: 90px 0;
+    color: #1d4355;
+    background-color: #ebe8e4;
+    height: 100vh; 
     display: flex;
     align-items: center; 
 }
 
+.top-row{
+    align-items: center; 
+    padding: 45px 0;
+}
 .row{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 /* Left hand image */
 .about-col-1{
-    flex-basis: 35%;
+    flex-basis: 40%;
 }
 
 .about-col-1 img{
-    width: 100%;
+    width: 70%;
     border-radius: 15px;
 }
 
@@ -149,10 +151,21 @@ nav ul li a:hover::after{
 }
 
 /* About me title section */
-.sub-title{
-    font-size: 60px;
+#about .sub-title{
+    font-size: 40px;
     font-weight: 600;
-    color: #EDB5BF;
+    color: #1d4355;
+
+}
+
+/* Mission */
+#about .sub-header{
+    font-size: 30px;
+    font-weight: 600;
+    color: #1d4355;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
@@ -160,6 +173,7 @@ nav ul li a:hover::after{
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
+    justify-content: center;
 }
 
 .tab-links{
@@ -174,7 +188,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0; 
     height: 3px;
-    background: #EDB5BF;
+    background: #1d4355;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -195,7 +209,7 @@ nav ul li a:hover::after{
 
 /* The pink labels in the content in the 3 tabs in the about me section */
 .tab-contents ul li span{
-    color: #EDB5BF;
+    color: #1d4355;
     font-size: 17px;
     font-style: normal;
 }
@@ -210,46 +224,145 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/* ************************************************* PORTFOLIO ************************************************* */
-
-/* Set the portfolio id padding so there's space above and below */
-#portfolio{
-    color: #FFFFFF;
-    background-color: #4D6D9A;
+/**********************************************Pricing*************************/
+#pricing{
+    padding: 90px 0;
     height: 100vh;
+}
+#pricing .sub-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: #1d4355;
+
+}
+#pricing .container.pricing-cards {
     display: flex;
+    justify-content: center;
+    align-items: flex-end; /* This is the key change to align all cards at the bottom */
+    flex-wrap: nowrap;
+    gap: 0;
+    position: relative;
+    padding: 90px;
+}
+
+#pricing .card {
+  width: 300px;
+  padding: 30px 20px;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  background-color: #f3f0ec;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#pricing .card h3 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #1d4355;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#pricing .card h1 {
+  font-size: 2.5rem;
+  margin: 10px 0 20px;
+  color: #1d4355;
+}
+
+#pricing .card ul {
+    list-style: disc;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #1d4355;
+    line-height: 1.8;
+    text-align: left;
+}
+
+
+/* LEFT CARD */
+#pricing .just-starting {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 0;
+}
+
+/* CENTER CARD - raised, overlapping */
+#pricing .small-business {
+    background-color: #1d4355;
+    color: ebe8e4;
+    margin-top: -20px;
+    z-index: 2;
+    border-radius: 60px 60px 30px 30px;
+    transform: scale(1.02);
+    min-height: 450px;
+}
+
+#pricing .small-business h3{
+  color: #ebe8e4;
+}
+#pricing .small-business ul li {
+  color: #ebe8e4;
+}
+#pricing .small-business h1{
+  color: #ebe8e4;
+}
+
+/* RIGHT CARD */
+#pricing .growing-business {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 0;
+}
+
+/* ************************************************* Reviews ************************************************* */
+
+/* Set the reviews id padding so there's space above and below */
+#reviews{
+    color: #FFFFFF;
+    padding: 90px 0;
+    background-color: #ebe8e4;
+    height: 100vh;
     align-items: center; 
 }
 
-/* Set formatting for the section of 3 work examples */
-.work-list{
+/* Set formatting for the section of 4 reviews examples */
+.reviews-list{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    grid-gap: 40px;
    margin-top: 50px; 
 }
 
-/* Set the formatting for each work example separately */
-.work{
+/* Set the formatting for each reviews example separately */
+.reviews{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
     background-color: none;
 }
 
+#reviews .sub-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: #1d4355;
+}
+
 /* set the image formatting */
-.work img{
+.reviews img{
     width: 100%;
     border-radius: 10px;
     display: block;
     transition: tranform 0.5s;
 }
 
-/* Each work example has a layer with the gradient gackground and the text on top of the image*/ 
+/* Each reviews example has a layer with the gradient gackground and the text on top of the image*/ 
 .layer{
     width: 100%;
     height: 0%; 
-    background: linear-gradient(rgba(77,109,154,.85), #EDB5BF);
+    background: linear-gradient(rgba(29, 67, 85, 1), #ebe8e4);
     border-radius: 10px; 
     position: absolute;
     left: 0;
@@ -274,11 +387,11 @@ nav ul li a:hover::after{
 /* links in the layer */
 .layer a{
     margin-top: 20px;
-    color: #EDB5BF;
+    color: #1d4355;
     text-decoration: none;
     font-size: 30px;
     line-height: 60px;
-    background: #4D6D9A;
+    background: #ebe8e4;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -286,10 +399,10 @@ nav ul li a:hover::after{
 }
 
 /* When you hover over any of the work examples */
-.work:hover img {
+.reviews:hover img {
     transform: scale(1.1);
 }
-.work:hover .layer {
+.reviews:hover .layer {
     height: 100%;
 }
 
@@ -298,26 +411,45 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #EDB5BF;
+    border: 1px solid #1d4355;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #FFF;
+    color: #1d4355;
     transition: background 0.5s;
 }
 .btn:hover{
-    background: #EDB5BF;
+    background: #f3f0ec;
 }
 
-/* ************************************************* CONTACT ************************************************* */
+/* *************************************************CONTACT************************************************* */
 #contact{
-    color: #4D6D9A;
-    background-color: #FFFFFF;
-    height: 100vh;
+    padding: 90px 0;
+    color: #ebe8e4;
+    background-color: #1d4355;
+    height: 100vh; 
     display: flex;
     align-items: center; 
-    margin: auto;
-    width: 50%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.left-contact{
+    flex-basis: 30%;
+    padding: 100px, 100px;
+}
+
+/* Right hand column with the text */
+.right-contact{
+    flex-basis: 60%;
+    padding-left: 100px;
+}
+.dark-title{
+    color: #ebe8e4;
+    padding: 75px, 0;
 }
 .social-icons{
     margin-top: 30px;
@@ -325,22 +457,24 @@ nav ul li a:hover::after{
 .social-icons a{
     text-decoration: none;
     font-size: 30px;
-    color: #4D6D9A;
+    color: #ebe8e4;
     display: inline-block;
     transition: transform 0.5s;
     padding: 5px;
 }
 .social-icons a:hover{
-    color: #EDB5BF;
+    color: #1d4355;
 }
 .btn.btn2{
     display: inline-block;
-    background: #4D6D9A;
-    border: 1px solid #4D6D9A;
+    background: #ebe8e4;
+    border: 1px solid #ebe8e4;
+    color: #1d4355;
+
 }
 
 .btn.btn2:hover{
-    color: #EDB5BF;
+    color: #ebe8e4;
 }
 
 .contact-center form{
@@ -351,15 +485,15 @@ form input, form textarea{
     width: 100%;
     border: 0;
     outline: none;
-    background: #4D6D9A;
+    background: #ebe8e4;
     padding: 15px;
     margin: 15px 0;
-    color: #FFF;
+    color: #1d4355;
     font-size: 18px;
     border-radius: 6px;
 }
 ::placeholder{
-    color:#FFF;
+    color:#1d4355;
 }
 
 form .btn2{
@@ -369,7 +503,7 @@ form .btn2{
     cursor: pointer;
 }
 #msg{
-    color: #EDB5BF;
+    color: #000000;
     margin-top: -10px;
     display: block;
     font-size: 20px;
@@ -379,7 +513,7 @@ form .btn2{
 /* ************************************************* CSS For Small Screens ************************************************* */
 @media only screen and (max-width: 600px){
     #header{
-        background-color: #4D6D9A;
+        background-color: #ebe8e4;
     }
     /* Resize intro sentence */
     .intro-sentence{
@@ -399,7 +533,7 @@ form .btn2{
     }
     /* Creating side navigation bar */
     nav ul{
-        background: #EDB5BF;
+        background: #ebe8e4;
         position: fixed;
         top: 0;
         right: -150px;
